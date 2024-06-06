@@ -28,7 +28,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
       picture: photos[0].value,
       accessToken,
     };
-    console.log('GoogleStrategy validate user:', user);
+
     done(null, user);
   }
 }

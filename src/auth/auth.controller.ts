@@ -26,8 +26,6 @@ export class AuthController {
       accessToken: req.user['accessToken'],
     };
 
-    console.log('AuthController googleAuthRedirect user:', user);
-
     await this.userService.createOrUpdate(user);
 
     res.clearCookie('connect.sid', { path: '/' });
@@ -47,7 +45,7 @@ export class AuthController {
   @Get('google/login')
   googleLoginRedirect(@Res() res: Response) {
     res.send(
-      '<html><body><h1>Usuário já Logado</h1><br><p>Para logar outro usuário, por favor limpe seus cookies e dados do navegador e inicie login novamente.',
+      '<html><body><h1>Usuário já Logado</h1><br><p style="font-family: Arial; width: 20%;">Para logar outro usuário, por favor limpe seus cookies e dados do navegador e inicie login novamente.',
     );
   }
 }
